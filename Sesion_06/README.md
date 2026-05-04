@@ -1056,7 +1056,7 @@ awk '{counts[$1]++} END{for (sample in counts) print sample, counts[sample]}' re
 ### Extraer coordenadas de features GFF
 ```bash
 awk '$3=="gene" {print $1, $4, $5, $7}' annotations.gff
-
+```
 ---
 
 ## 🔗 Comandos relacionados entre sí
