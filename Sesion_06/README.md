@@ -1093,8 +1093,6 @@ awk '$3=="gene" {print $1, $4, $5, $7}' annotations.gff
 
 ---
 
-
-### Actividad 35
 ### 📋 Actividad Asíncrona — Sesión 06
 
 ```bash
