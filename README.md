@@ -1,8 +1,9 @@
 # 🧬 1ABL0014 — Principios de Programación en Bioinformática
 
-> **Programa de Biología · Universidad Peruana de Ciencias Aplicadas (UPC)**  
-> **Facultad de Ciencias de la Salud · Ciclo Cuarto · 2 créditos · 4 horas prácticas semanales**  
-> Docente: Manuel Ramírez Sáenz · Coordinación: Frank Guzman Escudero
+> **Programa de Biología · Universidad Peruana de Ciencias Aplicadas (UPC)**
+> **Facultad de Ciencias de la Salud · Ciclo Cuarto · 2 créditos · 4 horas prácticas semanales**
+>
+> Docente: Manuel Ramírez Sáenz · Coordinación: Frank Guzmán Escudero
 
 ---
 
@@ -20,13 +21,13 @@ La bioinformática moderna no puede entenderse sin programación. Este curso te 
 
 | Semana | Sesión | Tema | Estado | Material |
 |--------|--------|------|--------|----------|
-| 1 | S00 | Presentación del curso | ✅ Disponible | [→ sesion_00](sesion_00_introduccion/) |
-| 2 | S01 | Sistemas operativos y GNU/Linux. Terminal y comandos básicos | ✅ Disponible | [→ sesion_01](sesion_01/) |
-| 3 | S02 | Ambiente de trabajo | ✅ Disponible | [→ sesion_02](Sesion_02/) |
-| 4 | S03 | Sistemas de archivos | ✅ Disponible | [→ sesion_03](Sesion_03/) |
-| 5 | S04 | Flujo de datos | ✅ Disponible | [→ sesion_04](Sesion_04/) |
-| 6 | S05 | **Comandos básicos I** | ✅ Disponible | [→ sesion_05](Sesion_05/) |
-| 7 | S06 | Comandos básicos II | 🔜 Próximamente | — |
+| 1 | S00 | Presentación del curso | ✅ Disponible | → [sesion_00](sesion_00_introduccion/) |
+| 2 | S01 | Sistemas operativos y GNU/Linux. Terminal y comandos básicos | ✅ Disponible | → [sesion_01](sesion_01/) |
+| 3 | S02 | Ambiente de trabajo | ✅ Disponible | → [sesion_02](Sesion_02/) |
+| 4 | S03 | Sistemas de archivos | ✅ Disponible | → [sesion_03](Sesion_03/) |
+| 5 | S04 | Flujo de datos | ✅ Disponible | → [sesion_04](Sesion_04/) |
+| 6 | S05 | **Comandos básicos I** | ✅ Disponible | → [sesion_05](Sesion_05/) |
+| 7 | **S06** | **Comandos básicos II** | ✅ **Disponible** | → **[sesion_06](Sesion_06/)** 🆕 |
 | 8 | — | **LB1 — Laboratorio 1** | 📝 Semana 8 | — |
 
 ### Unidad II — Shell Scripting *(Semanas 9–16)*
@@ -91,7 +92,7 @@ Principios_Programacion_Bioinformatica/
 │   ├── practica_guiada.sh
 │   └── datos/
 │
-├── Sesion_05/                         ← Comandos básicos I  ← NUEVO
+├── Sesion_05/                         ← Comandos básicos I
 │   ├── README.md
 │   ├── practica_guiada.sh
 │   └── datos/
@@ -101,6 +102,10 @@ Principios_Programacion_Bioinformatica/
 │       ├── expression.txt
 │       ├── seqs_1.fasta
 │       └── seqs_2.fasta
+│
+├── Sesion_06/                         ← Comandos básicos II  ← NUEVO
+│   ├── README.md                      ← Guía completa de la sesión
+│   └── practica_guiada.sh           ← Script de práctica interactiva
 │
 └── recursos/
     └── links_utiles.md
@@ -114,17 +119,17 @@ Principios_Programacion_Bioinformatica/
 |-------------|-----------|--------------|
 | **Google Cloud Shell** | Terminal Linux en la nube (sin instalar nada) | [shell.cloud.google.com](https://shell.cloud.google.com) |
 | **GitHub** | Repositorio de materiales del curso | Este repositorio |
-| **NCBI** | Base de datos de secuencias biológicas | [ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov) |
+| **NCBI** | Base de datos de secuencias biológicas | [ncbi.nlm.nih.gov](https://ncbi.nlm.nih.gov) |
 
 ---
 
 ## 📖 Bibliografía
 
 | Referencia | Editorial | Uso en el curso |
-|-----------|-----------|-----------------|
+|------------|-----------|-----------------|
 | Hausenblas, M. (2022). *Learning Modern Linux*. O'Reilly | O'Reilly | Semanas 1–4 |
 | Shotts, W. (2019). *The Linux Command Line* (2a ed.). No Starch Press | No Starch | Referencia general |
-| Ward, B. (2021). *How Linux Works* (3rd ed.). No Starch Press | No Starch | **Semana 5** |
+| Ward, B. (2021). *How Linux Works* (3rd ed.). No Starch Press | No Starch | Semana 5 |
 | Kothari et al. (2011). *Linux*. New Age International | New Age | Semana 4 |
 | Parker, S. (2011). *Shell Scripting: Expert Recipes*. Wiley | Wiley | Semanas 13–14 |
 | Foster-Johnson et al. (2005). *Beginning Shell Scripting*. Wiley | Wiley | Semana 14 |
@@ -132,7 +137,7 @@ Principios_Programacion_Bioinformatica/
 | Akalin, A. (2021). *Computational Genomics with R*. CRC | CRC | Semana 1 — contexto |
 | Curry, E. R. (2020). *Introduction to Bioinformatics with R*. CRC | CRC | Semana 1 — contexto |
 
-Todos los libros están disponibles en el [catálogo UPC](https://catalogo.upc.edu.pe).
+Todos los libros están disponibles en el catálogo UPC.
 
 ---
 
@@ -147,8 +152,52 @@ cd Principios_Programacion_Bioinformatica
 git pull
 
 # Ir a la sesión de la semana
-cd Sesion_05/
+cd Sesion_06/
+
+# Leer la guía
+cat README.md
+
+# Ejecutar la práctica guiada
 bash practica_guiada.sh
+```
+
+---
+
+## 🧬 Pipeline típico de bioinformática con los comandos del curso
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  EJEMPLO: Análisis de secuencias FASTA con herramientas     │
+│  aprendidas en las semanas 5 y 6                              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   cat genoma.fasta                                          │
+│       │                                                     │
+│       ▼                                                     │
+│   grep ">" → Extrae headers (identificadores)              │
+│       │                                                     │
+│       ▼                                                     │
+│   grep -v ">" | fold -w 60 → Secuencia formateada          │
+│       │                                                     │
+│       ▼                                                     │
+│   grep -E "GT[CT][AG]AC" → Busca sitios HincII             │
+│       │                                                     │
+│       ▼                                                     │
+│   tr 'ATGC' 'TACG' | rev → Hebra complementaria inversa    │
+│       │                                                     │
+│       ▼                                                     │
+│   sed 's/ATG/START/g' → Marca codones de inicio            │
+│       │                                                     │
+│       ▼                                                     │
+│   awk -F '|' '{print $1}' → Extrae campos de anotación    │
+│       │                                                     │
+│       ▼                                                     │
+│   sort | uniq -c | sort -nr → Cuenta y ordena motivos      │
+│       │                                                     │
+│       ▼                                                     │
+│   wc -l → Cuenta resultados finales                        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -157,9 +206,9 @@ bash practica_guiada.sh
 
 | Docente | Rol | Contacto |
 |---------|-----|----------|
-| Frank Guzman Escudero | Coordinación del curso | PCBLFGUZ@upc.edu.pe |
+| Frank Guzmán Escudero | Coordinación del curso | PCBLFGUZ@upc.edu.pe |
 | Manuel Ramírez Sáenz | Docente | PCBLMRAM@upc.edu.pe |
 
 ---
 
-*Repositorio mantenido por Manuel Ramírez Sáenz · Semestre 2026-1*
+_Repositorio mantenido por Manuel Ramírez Sáenz · Semestre 2026-1_
