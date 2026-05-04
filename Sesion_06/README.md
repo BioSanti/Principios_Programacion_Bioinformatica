@@ -851,8 +851,6 @@ awk -v FS='-' '/^a/ {print $2}' word_guion.txt
 | `FILENAME` | Nombre del archivo en proceso |
 | `ARGC` / `ARGV` | Argumentos de línea de comandos |
 
----
-
 ## 📁 Archivos de la sesión
 
 | Archivo | Descripción |
@@ -905,6 +903,23 @@ awk -v FS='-' '/^a/ {print $2}' word_guion.txt
 │   wc -l           →  Cuenta líneas finales                  │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+```
+
+## 📋 Actividad Asíncrona — Sesión 06
+
+```
+- Crear tu directorio de trabajo
+- Descarga los datos desde SGD
+  - http://downloads.yeastgenome.org/curation/chromosomal_feature/SGD_features.tab
+  - http://downloads.yeastgenome.org/curation/chromosomal_feature/SGD_features.README
+- Comprobación rápida. ¿Dónde estás y qué tienes?
+- ¿Cómo puedo ver los datos página por página?
+- ¿Cuántas líneas tiene el archivo SGD_features.tab?
+- ¿Cómo empieza el archivo?
+- ¿Qué líneas coinciden con el patrón YAL060W?
+- ¿Cómo guardo los resultados en un nuevo archivo?
+- ¿Cómo puedo colorear el patrón identificado?
+- ¿Cómo podemos saber cuántas líneas NO coinciden con el patrón Dubious?
 ```
 
 ---
