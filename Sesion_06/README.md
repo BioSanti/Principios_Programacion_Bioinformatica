@@ -66,19 +66,19 @@ nano references.txt
 
 Contenido de `references.txt`:
 ```
-seq1chr1exp-AC02
-seq1CHR1exp-CC33
-seq2chr1exp-HT33
-seq3chr2exp-FG90
-seq3chr2exp-FG90
-seq3chr2exp-FG90
-seq3chr2exp-FG90
-seq5chr12exp-0011
-seq5chr12exp-0011
-seq5chr12exp-0011
-seq7chr8exp-0TT1
-seq7chr8exp-0TT1
-seq7chr8exp-0TT1
+seq1 chr1 exp-AC02
+seq1 CHR1 exp-CC33
+seq2 chr1 exp-HT33
+seq3 chr 2exp-FG90
+seq3 chr2 exp-FG90
+seq3 chr2 exp-FG90
+seq3 chr2 exp-FG90
+seq5 chr12 exp-0011
+seq5 chr12 exp-0011
+seq5 chr12 exp-0011
+seq7 chr8 exp-0TT1
+seq7 chr8 exp-0TT1
+seq7 chr8 exp-0TT1
 ```
 
 ```bash
