@@ -1006,12 +1006,8 @@ sed '/^$/d' data.txt | awk 'BEGIN{avg=0} {avg +=$3} END{print avg/NR}'
 | `NR` | Número de registro (línea) | `'{print NR}'` |
 | `FS` | Separador de campos de entrada | `-F ','` o `-v FS=','` |
 | `OFS` | Separador de campos de salida | `'{OFS="\t"; print $1, $2}'` |
-| `RS` | Separador de registros de entrada | `-v RS='
-
-'` |
-| `ORS` | Separador de registros de salida | `'{ORS="
-
-"; print}'` |
+| `RS` | Separador de registros de entrada | `-v RS=''` |
+| `ORS` | Separador de registros de salida | `'{ORS=""; print}'` |
 | `FILENAME` | Nombre del archivo en proceso | `'{print FILENAME}'` |
 | `ARGC` | Número de argumentos | `BEGIN{print ARGC}'` |
 | `ARGV` | Array de argumentos | `BEGIN{print ARGV[1]}'` |
