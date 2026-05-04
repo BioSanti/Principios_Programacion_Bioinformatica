@@ -1059,11 +1059,9 @@ awk '$3=="gene" {print $1, $4, $5, $7}' annotations.gff
 
 ---
 
----
-
 ## 🔗 Comandos relacionados entre sí
 
-```
+```bash
 ┌─────────────────────────────────────────────────────────────┐
 │                    PIPELINE TÍPICO EN BIOINFORMÁTICA         │
 ├─────────────────────────────────────────────────────────────┤
@@ -1099,9 +1097,11 @@ awk '$3=="gene" {print $1, $4, $5, $7}' annotations.gff
 
 ---
 
-## 📋 Actividad Asíncrona — Sesión 06
 
-```
+### Actividad 35
+### 📋 Actividad Asíncrona — Sesión 06
+
+```bash
 - Crear tu directorio de trabajo
 - Descarga los datos desde SGD
   - http://downloads.yeastgenome.org/curation/chromosomal_feature/SGD_features.tab
