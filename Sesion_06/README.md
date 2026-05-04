@@ -425,9 +425,9 @@ nano secuencias.txt
 
 Contenido:
 ```
-1ACTG
-2ACTG
-3TTTGACA
+1 ACTG
+2 ACTG
+3 TTTGACA
 ```
 
 ```bash
@@ -621,6 +621,13 @@ sed '7c\Sábado_again' dias.txt
 
 ### Actividad 18 — Sustitución básica
 
+• `s`
+• sed permite la sustitución de texto
+• Busca patrones de texto usando expresiones regulares y reemplaza el texto encontrado
+• En su forma más básica, puede cambiar una palabra por otra usando la siguiente sintaxis:
+
+`$ sed 's/texto_a_buscar/texto_a_modificar/' <fichero_a_reemplazar > fichero_nuevo`
+
 ```bash
 # Reemplazar primera ocurrencia de "Lunes" por "Inicio de semana"
 sed 's/Lunes/Inicio de semana/' dias.txt
@@ -636,6 +643,12 @@ sed -n 's/Domingo/Fin de semana/p' dias.txt
 ```
 
 ### Actividad 19 — Sustitución global
+
+- sed reemplaza patrones, no palabras
+- Por defecto, la orden s opera en la primera coincidencia de una línea y luego pasa a la siguiente línea.
+- Para que sed reemplace cada instancia de un patrón en lugar de solo la primera instancia en cada línea, debe añadir la orden opcional g al comando `s`
+
+`$ sed 's/Lunes/Inicio de semana/g' dias2.txt`
 
 ```bash
 # Crear archivo dias2.txt
@@ -694,6 +707,12 @@ sed 's/on/forward/2' song.txt
 ```
 
 ### Actividad 22 — Edición in-place con backup
+
+- Cuando usamos sed es importante tener en cuenta que nuestro archivo fuente no se ve afectado.
+- Las ediciones que se realizan con los comandos de sed se envían a la salida estándar.
+- Si queremos guardar nuestras ediciones, podemos redirigir la salida estándar a un archivo usando el metacarácter > o usar la opción –i que alterará el archivo fuente.
+
+`$ sed -i '1~2d' diasSemana.txt # elimina cada dos líneas y modifica diasSemana.txt`
 
 ```bash
 # Modificar archivo directamente creando backup (.back)
@@ -851,21 +870,192 @@ awk -v FS='-' '/^a/ {print $2}' word_guion.txt
 | `FILENAME` | Nombre del archivo en proceso |
 | `ARGC` / `ARGV` | Argumentos de línea de comandos |
 
-## 📁 Archivos de la sesión
+### Actividad 32 — Variables internas NF y NR
 
-| Archivo | Descripción |
-|---------|-------------|
-| `references.txt` | Secuencias de referencia para grep |
-| `lista1.txt` / `lista2.txt` | Listas de genes para comparación |
-| `palabras.txt` | Texto para práctica de regex |
-| `genes.txt` | Lista de genes para sort |
-| `uniq.txt` | Texto con duplicados |
-| `secuencias.txt` / `secuencias2.txt` | Secuencias de ADN |
-| `dias.txt` / `dias2.txt` | Días de la semana |
-| `song.txt` | Texto para práctica de sed |
-| `data.txt` | Datos tabulares para sed y awk |
-| `word_guion.txt` | Datos con separador guión |
-| `Ebola_genome.fasta` | Genoma de referencia (descarga NCBI) |
+```bash
+# Crear archivo references2.txt
+nano references2.txt
+```
+
+Contenido:
+```
+seq1 ref2 K562 10
+seq2 ref800 K562 20
+seq2 ref800 GM1787 50
+seq3 ref201 GM1787 100
+seq4 ref500 GM6789 500
+```
+
+```bash
+# Imprimir línea completa
+awk '{print $0}' references2.txt
+
+# Imprimir número de campos (NF = Number of Fields) por línea
+awk '{print NF}' references2.txt
+
+# Imprimir número de registro (NR = Number of Record) por línea
+awk '{print NR}' references2.txt
+
+# Filtrar líneas con más de 4 campos
+awk 'NF>4 {print $0}' references2.txt
+
+# Filtrar líneas con menos de 5 campos
+awk 'NF<5 {print $0}' references2.txt
+```
+
+> 💡 **NF** = Número de campos (columnas) en la línea actual  
+> 💡 **NR** = Número de registro (línea) que se está procesando
+
+---
+
+### Actividad 33 — Estructuras de control en awk
+
+`awk` soporta estructuras de control similares a otros lenguajes de programación:
+
+| Estructura | Sintaxis |
+|-----------|----------|
+| Condicional | `if (expr) statement` |
+| Condicional con else | `if (expr) statement else statement` |
+| Bucle while | `while (expr) statement` |
+| Bucle do-while | `do statement while (expr)` |
+| Bucle for | `for (opt_expr; opt_expr; opt_expr) statement` |
+| Bucle for en array | `for (var in array) statement` |
+
+```bash
+# Ver tamaños de archivos en directorio actual
+ls -lh | head
+
+# Extraer solo el tamaño (campo 6)
+ls -lh | awk '{print $6}' | head
+
+# Imprimir líneas donde el campo 4 sea mayor a 20
+awk '{if ($4 > 20) print $0}' references2.txt
+```
+
+---
+
+### Actividad 34 — Bloques BEGIN y END
+
+`awk` permite definir bloques especiales que se ejecutan:
+- **BEGIN**: Antes de procesar el primer registro (inicialización)
+- **END**: Después de procesar el último registro (resultados finales)
+
+```bash
+# Sumar todos los valores del campo 4
+awk '{print $0}' references2.txt
+
+# Calcular suma total usando BEGIN y END
+awk 'BEGIN{suma=0} {suma += $4} END{print suma}' references2.txt
+```
+
+> 💡 **BEGIN** se usa para inicializar variables (contadores, sumas, etc.)  
+> 💡 **END** se usa para imprimir resultados finales (promedios, totales, etc.)
+
+**Anatomía del comando:**
+```
+awk 'BEGIN{inicialización} {procesamiento_por_línea} END{resultados_finales}' archivo
+```
+
+---
+
+### Actividad 35 — Ejercicios integradores con awk
+
+```bash
+# Crear archivo data.txt
+nano data.txt
+```
+
+Contenido:
+```
+seq1 chr1 19
+seq3 chr1 34
+seq2 chr2 182
+seq1 chr10 55
+seq2 chr11 33
+seq4 chr3 22
+```
+
+```bash
+# 1. Imprimir líneas que NO contengan 33 en el campo 3
+awk '{if($3!=33) print $0}' data.txt
+
+# 2. Imprimir líneas que contengan 182 en el campo 3
+awk '{if($3==182) print $0}' data.txt
+
+# 3. Imprimir líneas con valor >= 50 en el campo 3
+awk '{if($3>=50) print $0}' data.txt
+
+# 4. Calcular promedio del campo 3
+sed '/^$/d' data.txt | awk 'BEGIN{avg=0} {avg +=$3} END{print avg/NR}'
+```
+
+> 💡 **Nota en el ejercicio 4:** `sed '/^$/d'` elimina líneas vacías antes de procesar con awk, asegurando que NR cuente solo líneas con datos.
+
+---
+
+## 🔗 Resumen de variables y estructuras de awk
+
+### Variables internas
+
+| Variable | Descripción | Ejemplo de uso |
+|----------|-------------|----------------|
+| `$0` | Línea completa | `'{print $0}'` |
+| `$1, $2, ...` | Campo 1, 2, etc. | `'{print $1, $3}'` |
+| `$NF` | Último campo | `'{print $NF}'` |
+| `NF` | Número de campos | `'{print NF}'` |
+| `NR` | Número de registro (línea) | `'{print NR}'` |
+| `FS` | Separador de campos de entrada | `-F ','` o `-v FS=','` |
+| `OFS` | Separador de campos de salida | `'{OFS="\t"; print $1, $2}'` |
+| `RS` | Separador de registros de entrada | `-v RS='
+
+'` |
+| `ORS` | Separador de registros de salida | `'{ORS="
+
+"; print}'` |
+| `FILENAME` | Nombre del archivo en proceso | `'{print FILENAME}'` |
+| `ARGC` | Número de argumentos | `BEGIN{print ARGC}'` |
+| `ARGV` | Array de argumentos | `BEGIN{print ARGV[1]}'` |
+
+### Estructuras de control
+
+| Estructura | Ejemplo |
+|-----------|---------|
+| `if` | `'{if ($4 > 20) print $0}'` |
+| `if-else` | `'{if ($4 > 20) print "alto"; else print "bajo"}'` |
+| `while` | `'{i=1; while (i<=NF) {print $i; i++}}'` |
+| `for` clásico | `'{for (i=1; i<=NF; i++) print $i}'` |
+| `for` en array | `'{for (gen in genes) print gen}'` |
+
+### Bloques especiales
+
+| Bloque | Cuándo se ejecuta | Uso típico |
+|--------|-------------------|-----------|
+| `BEGIN { }` | Antes del primer registro | Inicializar variables, imprimir headers |
+| `{ }` | En cada registro | Procesamiento principal |
+| `END { }` | Después del último registro | Imprimir totales, promedios, resúmenes |
+
+---
+
+## 🧬 Aplicaciones bioinformáticas de awk
+
+### Calcular longitud promedio de genes
+```bash
+awk 'BEGIN{sum=0; count=0} {sum+=$3; count++} END{print "Promedio:", sum/count}' genes_lengths.txt
+```
+
+### Filtrar genes por cromosoma y expresión
+```bash
+awk '$2=="chr1" && $4>50 {print $1, $4}' expression_data.txt
+```
+
+### Contar reads por muestra (formato SAM simplificado)
+```bash
+awk '{counts[$1]++} END{for (sample in counts) print sample, counts[sample]}' reads.txt
+```
+
+### Extraer coordenadas de features GFF
+```bash
+awk '$3=="gene" {print $1, $4, $5, $7}' annotations.gff
 
 ---
 
