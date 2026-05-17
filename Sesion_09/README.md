@@ -3,7 +3,7 @@
 
 **Docentes:** Frank Guzmán Escudero, Manuel Ramírez Sáenz  
 **Universidad:** UPC - Facultad de Ciencias de la Salud - Programa de Biología  
-**Horario:** 1:00 pm - 5:00 pm (Descanso: 2:45 pm - 3:00 pm)
+**Horario:** 1:00 pm - 5:00 pm 
 
 ---
 
