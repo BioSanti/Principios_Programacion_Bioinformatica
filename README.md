@@ -35,6 +35,7 @@ La bioinformática moderna no puede entenderse sin programación. Este curso te 
 | Semana | Sesión | Tema | Estado | Material |
 |--------|--------|------|--------|----------|
 | 9 | S07 | Introducción a Shell scripting | 🔜 Próximamente | — |
+| 9 | S07 | **Introducción a Shell scripting** |  ✅ **Disponible** | → **[sesion_07](Sesion_07/)** 🆕 |
 | 10 | S08 | **TP — Trabajo Parcial** | 📝 Semana 10 | — |
 | 11 | S09 | Variables y estructuras de control | 🔜 Próximamente | — |
 | 12 | S10 | Bucles y funciones | 🔜 Próximamente | — |
