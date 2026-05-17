@@ -165,18 +165,18 @@ sudo apt-get install nano
 
 **Interfaz de Nano:**
 ```
-┌─────────────────────────────────────────────┐
-│ GNU nano 6.2           New Buffer           │  ← Barra de título
-│                                             │
-│ ventana principal del editor que muestra    │  ← Área de edición
-│ lo que está siendo editado.                 │
-│                                             │
-│                                             │
-│ [ Welcome to nano. For basic help, type     │  ← Línea de estado
-│   Ctrl+G. ]                                 │
-│ ^G Help    ^O Write Out  ^W Where Is  ^K Cut│  ← Atajos (Ctrl+letra)
+┌───────────────────────────────────────────────┐
+│ GNU nano 6.2           New Buffer             │  ← Barra de título
+│                                               │
+│ ventana principal del editor que muestra      │  ← Área de edición
+│ lo que está siendo editado.                   │
+│                                               │
+│                                               │
+│ [ Welcome to nano. For basic help, type       │  ← Línea de estado
+│   Ctrl+G. ]                                   │
+│ ^G Help    ^O Write Out  ^W Where Is  ^K Cut  │  ← Atajos (Ctrl+letra)
 │ ^X Exit    ^R Read File  ^\ Replace   ^U Paste│
-└─────────────────────────────────────────────┘
+└───────────────────────────────────────────────┘
 ```
 
 **Símbolos importantes:**
