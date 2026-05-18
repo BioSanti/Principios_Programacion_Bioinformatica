@@ -27,7 +27,7 @@ La bioinformática moderna no puede entenderse sin programación. Este curso te 
 | 4 | S03 | Sistemas de archivos | ✅ Disponible | → [sesion_03](Sesion_03/) |
 | 5 | S04 | Flujo de datos | ✅ Disponible | → [sesion_04](Sesion_04/) |
 | 6 | S05 | **Comandos básicos I** | ✅ Disponible | → [sesion_05](Sesion_05/) |
-| 7 | **S06** | **Comandos básicos II** | ✅ **Disponible** | → **[sesion_06](Sesion_06/)** 🆕 |
+| 7 | **S06** | **Comandos básicos II** | ✅ **Disponible** | → **[sesion_06](Sesion_06/)** |
 | 8 | — | **LB1 — Laboratorio 1** | 📝 Semana 8 | — |
 
 ### Unidad II — Shell Scripting *(Semanas 9–16)*
