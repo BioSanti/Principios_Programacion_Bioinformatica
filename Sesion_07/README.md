@@ -1,4 +1,4 @@
-# 🧬 Sesión 7: Introducción a la Programación en Shell
+# 🧬 Sesión 9: Introducción a la Programación en Shell
 ## Principios de Programación en Bioinformática - Unidad 2
 
 **Docentes:** Frank Guzmán Escudero, Manuel Ramírez Sáenz  
